@@ -15,6 +15,7 @@ export class Table {
     public turnTimer: any; // Timer reference
     public minBet: number;
     public turnStartTime: number;
+    public stage: string; // Game stage: 'pre-flop' | 'flop' | 'turn' | 'river' | 'showdown'
 
     constructor(id: string, smallBlind: number) {
         this.id = id;
