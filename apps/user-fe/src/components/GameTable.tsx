@@ -36,7 +36,8 @@ export function GameTable({ tableId, userId, token, onLeave }: GameTableProps) {
     }, [winner]);
 
     useEffect(() => {
-        const socket = new WebSocket(`ws://localhost:8080?token=${token}`);
+        const wsUrl = import.meta.env.VITE_WS_URL || "ws://localhost:8080";
+        const socket = new WebSocket(`${wsUrl}?token=${token}`);
         ws.current = socket;
 
         socket.onopen = () => {

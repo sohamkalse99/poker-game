@@ -3,7 +3,8 @@ import jwt from "jsonwebtoken";
 import { UserManager } from "./UserManager";
 import { GameManager } from "./GameManager";
 
-const wss = new WebSocketServer({ port: 8080 });
+const PORT = Number(process.env.PORT) || 8080;
+const wss = new WebSocketServer({ port: PORT });
 const userManager = new UserManager();
 const gameManager = new GameManager();
 
